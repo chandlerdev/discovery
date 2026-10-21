@@ -1,0 +1,78 @@
+:root{
+  --leaf:#1B4332; --deep:#10241A; --sprout:#74C365; --lime:#C6F26E;
+  --paper:#FBFDF7; --card:#FFFFFF; --ink:#152B1F; --mist:#E4EEE2;
+  --clay:#E4572E; --muted:#5E7266; --radius:14px;
+  /* Fonts are variables too, so the Settings panel can change them like any colour. */
+  --font-body:'Inter','Segoe UI',system-ui,sans-serif;
+  --font-heading:'Sora','Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.55;font-size:15px;min-height:100vh}
+h1,h2,h3{font-family:var(--font-heading)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--sprout);outline-offset:2px}
+/* `input:not([type])` matters: an <input> with no type attribute defaults to text but is
+   NOT matched by input[type=text], so it would fall back to the raw browser control and
+   look nothing like the fields beside it. Checkboxes/radios/colors are excluded so they
+   keep their native rendering. */
+input:not([type]),input[type=text],input[type=number],input[type=date],input[type=password],
+input[type=email],input[type=tel],input[type=search],textarea,select{
+  width:100%;border:1.5px solid var(--mist);border-radius:10px;background:#FDFEFB;
+  padding:10px 12px;font:inherit;color:var(--ink)}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--sprout)}
+.btn{font:inherit;font-weight:600;border:none;border-radius:10px;cursor:pointer;padding:11px 20px;font-size:14.5px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-primary{background:var(--leaf);color:var(--lime)}
+.btn-ghost{background:#fff;border:1.5px solid var(--mist);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--sprout)}
+.btn-danger{background:#fff;border:1.5px solid #F3C0AE;color:var(--clay)}
+.btn-approve{background:var(--sprout);color:#0F2417}
+.panel{background:var(--card);border:1px solid var(--mist);border-radius:var(--radius);padding:22px;margin-bottom:16px}
+.panel h2{font-size:19px;margin-bottom:4px}
+.sub{font-size:13.5px;color:var(--muted);margin-bottom:16px}
+.meta-line{font-size:13px;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;border-radius:999px;padding:5px 13px}
+.pill.green{background:#EAF7E2;color:var(--leaf);border:1px solid #CBE8BC}
+.pill.amber{background:#FFF4E3;color:#8A5A00;border:1px solid #F2DCB3}
+.toolrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.locknote{background:#FFF9EC;border:1.5px solid #F2DCB3;border-radius:10px;padding:12px 14px;font-size:13.5px;color:#7A5200;margin-bottom:14px}
+.f{display:block;font-weight:600;font-size:13.5px;margin:14px 0 6px}
+table.est{width:100%;border-collapse:collapse;margin-top:8px}
+table.est th{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);text-align:left;padding:8px;border-bottom:2px solid var(--mist)}
+table.est td{padding:7px 8px;border-bottom:1px solid var(--mist);vertical-align:top}
+.est-total{display:flex;justify-content:flex-end;align-items:baseline;gap:8px;margin-top:12px;font-family:'Sora',sans-serif}
+.est-total .num{font-size:24px;font-weight:700;color:var(--leaf)}
+.answer-row{background:#FDFEFB;border:1px solid var(--mist);border-radius:11px;padding:12px 15px;margin-bottom:9px}
+.answer-row .q{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.answer-row .a{margin-top:4px;font-size:14.5px;white-space:pre-wrap}
+.answer-row .a.empty{color:#A8B8AC;font-style:italic}
+.qcard{background:var(--card);border:1px solid var(--mist);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px}
+.qcard.answered{border-left:4px solid var(--sprout)}
+.qtitle{font-weight:600;margin-bottom:4px}
+.qtitle .req{color:var(--clay)}
+.qhint{font-size:13px;color:var(--muted);margin-bottom:12px}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choices.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.choice{display:flex;align-items:center;gap:10px;border:1.5px solid var(--mist);border-radius:10px;padding:10px 13px;cursor:pointer;background:#FDFEFB;font-size:14.5px}
+.choice input{accent-color:var(--leaf);width:17px;height:17px;flex:none}
+.choice.on{border-color:var(--sprout);background:#F1FAEA}
+.section-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px}
+.section-tag{background:var(--leaf);color:var(--lime);font-family:'Sora',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:6px 6px 6px 0}
+.step{flex:1;min-width:110px;background:#fff;border:1.5px solid var(--mist);border-radius:10px;padding:10px 12px}
+.step .n{font-family:'Sora',sans-serif;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase}
+.step .t{font-size:13px;font-weight:600;margin-top:3px}
+.step.done{border-color:var(--sprout);background:#F3FBEC}
+.step.now{border-color:var(--leaf);background:var(--leaf);color:#EFF7EC}
+.step.now .n{color:var(--lime)}
+.tabbar{background:var(--leaf);padding:0 clamp(16px,4vw,40px);display:flex;gap:2px;overflow-x:auto}
+.tab{background:none;border:none;color:#CDE3C9;font:inherit;font-weight:600;font-size:14px;padding:13px 18px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tab.on{color:var(--lime);border-bottom-color:var(--lime)}
+.headerbar{background:var(--deep);color:#EFF7EC;padding:14px clamp(16px,4vw,40px);display:flex;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:4px solid var(--lime)}
+main.wrap{max-width:1160px;margin:0 auto;padding:26px clamp(14px,4vw,32px) 90px}
+@media print{
+  body.print-proposal *{visibility:hidden}
+  body.print-proposal #proposalCard, body.print-proposal #proposalCard *{visibility:visible}
+  body.print-proposal #proposalCard{position:absolute;left:0;top:0;width:100%;margin:0}
+  body.print-proposal .no-print{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}

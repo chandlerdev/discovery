@@ -1,0 +1,23 @@
+# Dependencies & build output
+node_modules/
+.next/
+out/
+target/
+*.tsbuildinfo
+
+# Local env overrides
+.env.local
+.env.*.local
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Claude Code local files
+.claude/
